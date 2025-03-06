@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .header {
+            color: #008000;
+            font-size: 2rem;
+            margin-top: 50px; /* Adjust top margin to move it down */
+            text-align: center;
+        }
+
+        .content {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image-caption {
+            color: #008000;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Keeps the ellipsis from shifting text */
+        .ellipsis {
+            display: inline-block;
+            width: 2em; /* Adjust width so the text doesn't shift */
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>Oh shqshlno bp hiq ebfbqsl qi eznbup. Bq'p bh qts jogsp. Bq'p bh anofsp. Bq'p bh tbllsh bfogs qsyqp. Bq'p bh nswsnps bfogs psonutsp. Bq'p oee onivhl vp pbhus qts msgbhhbhg    <span class="ellipsis" id="ellipsis"></span></p>
+    </div>
+
+    <div class="content">
+        <!-- Example Image 1 -->
+        <div class="image-container">
+            <img src="your-image-path.jpg" alt="">
+            <div class="image-caption">He was a puppet, placed into power at a young age. Seen by his rival empire as an illegitimate usurper, his reign was short. </div>
+        </div>
+
+        <!-- Example Image 2 -->
+        <div class="image-container">
+            <img src="your-image-path2.jpg" alt="">
+            <div class="image-caption">In defeat he was spared, exiled to estates built by Lucullus</div>
+        </div>
+    </div>
+
+    <script>
+        const ellipsis = document.getElementById("ellipsis");
+        const dots = ["", ".", ". .", ". . ."];
+        let count = 0;
+
+        setInterval(() => {
+            ellipsis.textContent = dots[count];
+            count = (count + 1) % dots.length; // Loops back to start
+        }, 500); // Adjust speed here (500ms = 0.5 seconds per change)
+    </script>
+</body>
+</html>
